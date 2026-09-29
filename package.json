@@ -5,7 +5,12 @@
   "description": "Wordle de Magic: The Gathering — adivinhe a carta lendária do dia usando dados da API do Scryfall.",
   "type": "module",
   "scripts": {
-    "fetch-cards": "node scripts/fetch-cards.mjs"
+    "fetch-cards": "node scripts/fetch-cards.mjs",
+    "serve": "python3 -m http.server 8123",
+    "test:e2e": "node scripts/e2e-smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
   },
   "license": "MIT"
 }

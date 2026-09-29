@@ -3,6 +3,14 @@
 Um Wordle diário de criaturas lendárias de *Magic: The Gathering*, com dados e
 imagens vindos da [API do Scryfall](https://scryfall.com/docs/api).
 
+Jogue em: https://lleonardogr.github.io/wordle-mtg/
+
+Para contexto de desenvolvimento (arquitetura, decisões, pipeline de dados),
+veja [CLAUDE.md](CLAUDE.md). Para o sistema visual e estado de design
+conhecido, [docs/DESIGN.md](docs/DESIGN.md). Para como testar — inclusive
+visualmente, sem depender de automação de navegador ao vivo —
+[docs/TESTING.md](docs/TESTING.md).
+
 ## Como funciona
 
 - Todo dia (UTC), uma criatura lendária é sorteada de forma determinística
