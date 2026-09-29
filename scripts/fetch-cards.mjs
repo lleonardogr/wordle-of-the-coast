@@ -18,7 +18,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, "..", "data", "cards.json");
 
 const USER_AGENT = "wordle-mtg-data-fetcher/1.0 (+https://github.com/)";
-const SEARCH_QUERY = "t:legendary t:creature -is:funny game:paper lang:en";
+// name:/,/ restringe ao formato "Nome, Epíteto" — garante que o modo fácil
+// (nome antes da vírgula) seja sempre curto de verdade. Sem esse filtro,
+// cartas sem vírgula (ex: "Go-Shintai of Life's Origin") caem no fallback
+// de nome completo em targetNameForMode() e o modo fácil vira tão difícil
+// quanto o difícil.
+const SEARCH_QUERY = "t:legendary t:creature -is:funny game:paper lang:en name:/,/";
 const REQUEST_DELAY_MS = 750;
 const MAX_RETRIES = 5;
 
@@ -73,6 +78,11 @@ function normalizeCard(card) {
 
   if (!name || !typeLine.includes("Creature")) return null;
   if (!imageUris.art_crop || !imageUris.normal) return null;
+  // A busca `name:/,/` casa com o nome bruto do Scryfall, que para cartas
+  // de duas faces (transform/flip) pode ser "Frente // Verso, Epíteto" —
+  // a vírgula estar no VERSO não ajuda o modo fácil, já que usamos o nome
+  // da face escolhida por pickFace(). Garantir aqui, não só na query.
+  if (!name.includes(",")) return null;
 
   return {
     id: card.oracle_id || card.id,

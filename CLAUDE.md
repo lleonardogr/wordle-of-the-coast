@@ -45,10 +45,22 @@ entrar ali, não espalhada pelo `app.js`.
 npm run fetch-cards
 ```
 
-Busca `t:legendary t:creature -is:funny game:paper lang:en` e escreve
-`data/cards.json`. Pontos de atenção, já resolvidos no script mas fáceis de
-reintroduzir se mexer nele:
+Busca `t:legendary t:creature -is:funny game:paper lang:en name:/,/` e
+escreve `data/cards.json` (2.567 cartas na última geração). Pontos de
+atenção, já resolvidos no script mas fáceis de reintroduzir se mexer nele:
 
+- **`name:/,/` na query** garante que toda carta do pool tem o formato
+  "Nome, Epíteto" — essencial para o modo fácil ser sempre curto de
+  verdade (ver "Decisões de design do jogo" abaixo). Sem isso, cartas como
+  "Go-Shintai of Life's Origin" (sem vírgula) caíam no fallback de nome
+  completo em `targetNameForMode()` e o fácil virava tão difícil quanto o
+  difícil.
+- Essa vírgula pode estar na face "errada": para cartas de duas faces
+  (transform/flip), o nome bruto do Scryfall é tipo
+  `"Frente // Verso, Epíteto"` — a query casa pela vírgula no VERSO, mas
+  `pickFace()` pode escolher a FRENTE (sem vírgula) como nome final. Por
+  isso `normalizeCard()` também descarta (`return null`) qualquer carta
+  cujo nome final não tenha vírgula, não confiando só na query.
 - **Rate limit do Scryfall**: usa delay de 750ms entre páginas + retry com
   backoff exponencial em 429/5xx. Delays menores (~200ms) começaram a
   tomar 429 na prática durante o desenvolvimento — não abaixar sem motivo.
@@ -65,9 +77,11 @@ reintroduzir se mexer nele:
 
 ## Decisões de design do jogo
 
-- **Modo fácil**: nome antes da vírgula (ou nome completo se não houver
-  vírgula — alguns nomes sem vírgula são longos; ver nota de tamanho de
-  peça abaixo).
+- **Modo fácil**: nome antes da vírgula. O pool (`fetch-cards.mjs`) só
+  inclui cartas com vírgula no nome, então isso é garantido pelos dados,
+  não por um fallback no código do jogo — `targetNameForMode()` ainda tem
+  um fallback de nome completo por segurança, mas ele não deveria disparar
+  na prática.
 - **Modo difícil**: nome completo, pontuação/espaços já revelados como
   peças fixas.
 - Tentativas: 5 nos dois modos (`MAX_ATTEMPTS` em `gameLogic.js`) — a

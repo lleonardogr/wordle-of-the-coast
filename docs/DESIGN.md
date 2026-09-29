@@ -60,6 +60,12 @@ ver `docs/TESTING.md` para o porquê disso ser necessário:
 4. Subtipo de criatura ficava com "?" residual no painel de dicas mesmo
    depois da carta já estar totalmente revelada (arte, Oracle text
    completo) — a condição de revelação não considerava `gameOver`.
+5. Desproporção de desbalanceamento: até ~26% do pool não tinha vírgula
+   no nome, então o modo fácil às vezes virava tão longo/difícil quanto o
+   difícil (chegou a acontecer com a carta do dia durante o
+   desenvolvimento: 22 letras nos dois modos). Corrigido restringindo o
+   pool a cartas com vírgula (`name:/,/` na query do Scryfall + guarda em
+   `normalizeCard()`) — ver CLAUDE.md.
 
 ## Responsividade
 
