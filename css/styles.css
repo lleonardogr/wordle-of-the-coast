@@ -31,6 +31,13 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset
 .oracle{background:#f4ecd2;border:1px solid #8c7d58;border-radius:6px;padding:10px 12px;font-family:Georgia,serif;font-size:15px;line-height:1.5;min-height:96px}
 .oracle p{margin:0 0 6px}
 .oracle-placeholder{color:#8c7d58;font-style:italic}
+.ms{display:inline-flex;align-items:center;justify-content:center;box-sizing:content-box;width:1em;height:1em;min-width:15px;min-height:15px;border-radius:50%;font-family:"Instrument Sans",sans-serif;font-size:11px;font-weight:700;font-style:normal;margin:0 1px;line-height:1;vertical-align:-3px;background:#cbb98c;color:#2b2418;border:1px solid #8c7d58}
+.ms-w{background:#f3ecc8;color:#3a3226}
+.ms-u{background:#6aa7d8;color:#0e2338}
+.ms-b{background:#5b5060;color:#f4ecd2}
+.ms-r{background:#c9583a;color:#fff}
+.ms-g{background:#5aa36a;color:#0e2b19}
+#manaCost .ms{vertical-align:-2px}
 .hints{margin:10px 0 0;font-size:13px;color:#5a4f36;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 
 /* Tabuleiro */
@@ -41,8 +48,8 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset
 .t.ok{background:var(--ok);border-color:var(--ok)}.t.pres{background:var(--pres);border-color:var(--pres);color:#1a1502}.t.abs{background:var(--abs);border-color:var(--abs);color:var(--mute)}
 .t.cur{border-color:var(--mute)}
 .t.fix{width:16px;background:none;border:0;color:var(--mute)}
-.hard .t{width:clamp(22px,6.2vw,30px);height:clamp(28px,7.5vw,36px);font-size:clamp(13px,3.6vw,17px);border-width:1.5px}
-.hard .t.fix{width:10px}
+.compact .t{width:clamp(22px,6.2vw,30px);height:clamp(28px,7.5vw,36px);font-size:clamp(13px,3.6vw,17px);border-width:1.5px}
+.compact .t.fix{width:10px}
 .meta{text-align:center;color:var(--mute);font-size:14px;margin:4px 0 14px}
 .message{min-height:20px;text-align:center;font-size:14px;color:var(--pres);margin:2px 0 6px}
 

@@ -43,6 +43,25 @@ const el = {
 
 const KB_ROWS = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
 
+function escapeHtml(str) {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+// Scryfall representa símbolos de mana como texto cru "{W}{U}{2}{T}" —
+// troca cada símbolo por uma pastilha estilizada em vez de mostrar as chaves.
+function renderManaText(text) {
+  return escapeHtml(text).replace(/\{([^}]+)\}/g, (_, symbol) => {
+    const cls = symbol.replace(/\//g, "").toLowerCase();
+    return `<i class="ms ms-${cls}">${symbol}</i>`;
+  });
+}
+
+function renderOracleHtml(oracleText) {
+  const lines = (oracleText || "").split("\n").filter(Boolean);
+  if (!lines.length) return `<p><em>Sem texto de regras.</em></p>`;
+  return lines.map((l) => `<p>${renderManaText(l)}</p>`).join("");
+}
+
 let cardsPool = [];
 let todayCard = null;
 let mode = "easy";
@@ -159,7 +178,10 @@ function renderRow(cells, letters, feedback, isActive) {
 function renderBoard() {
   const state = modeState[mode];
   const max = MAX_ATTEMPTS[mode];
-  el.board.classList.toggle("hard", mode === "hard");
+  // Tiles ficam compactos com base no tamanho real do nome-alvo, não no
+  // modo — alguns nomes sem vírgula (sem separador "fácil") ainda são
+  // longos e quebram em várias linhas com o tamanho padrão de peça.
+  el.board.classList.toggle("compact", guessableLength(state.cells) > 10);
 
   let rowsHtml = "";
   state.guesses.forEach((g) => {
@@ -229,7 +251,11 @@ function renderHintsPanel() {
   const hints = revealState(used, card);
 
   const pipCount = (card.mana_cost.match(/\{[^}]+\}/g) || []).length;
-  el.manaCost.textContent = pipCount > 0 ? Array(pipCount).fill("?").join(" ") : "—";
+  if (gameOver) {
+    el.manaCost.innerHTML = pipCount > 0 ? renderManaText(card.mana_cost) : "—";
+  } else {
+    el.manaCost.textContent = pipCount > 0 ? Array(pipCount).fill("?").join(" ") : "—";
+  }
 
   const identity = card.color_identity.length
     ? COLOR_LABEL_ORDER.filter((c) => card.color_identity.includes(c))
@@ -243,9 +269,8 @@ function renderHintsPanel() {
   );
 
   const supertypeType = card.type_line.split("—")[0].trim();
-  el.typeLine.textContent = hints.subtypeRevealed
-    ? card.type_line
-    : `${supertypeType} — ${hints.subtype ? "?" : ""}`;
+  el.typeLine.textContent =
+    gameOver || hints.subtypeRevealed ? card.type_line : `${supertypeType} — ${hints.subtype ? "?" : ""}`;
   el.cmcLabel.textContent = `MV ${card.cmc}`;
 
   if (gameOver) {
@@ -257,15 +282,9 @@ function renderHintsPanel() {
   }
 
   if (gameOver) {
-    el.oracleBox.innerHTML = card.oracle_text
-      ? card.oracle_text
-          .split("\n")
-          .filter(Boolean)
-          .map((l) => `<p>${l}</p>`)
-          .join("")
-      : `<p><em>Sem texto de regras.</em></p>`;
+    el.oracleBox.innerHTML = renderOracleHtml(card.oracle_text);
   } else if (hints.revealedLines.length) {
-    el.oracleBox.innerHTML = hints.revealedLines.map((l) => `<p>${l}</p>`).join("");
+    el.oracleBox.innerHTML = hints.revealedLines.map((l) => `<p>${renderManaText(l)}</p>`).join("");
   } else {
     el.oracleBox.innerHTML = `<p class="oracle-placeholder">As dicas de texto de regras aparecem conforme você tenta.</p>`;
   }
@@ -301,7 +320,7 @@ function renderResultPanel() {
   el.resultImg.alt = card.name;
   el.resultName.textContent = card.name;
   el.resultType.textContent = card.type_line;
-  el.resultOracle.textContent = card.oracle_text || "";
+  el.resultOracle.innerHTML = renderOracleHtml(card.oracle_text);
   el.resultLink.href = card.scryfall_uri;
   el.resultPanel.classList.toggle("won", state.status === "won");
   el.resultPanel.classList.toggle("lost", state.status === "lost");
