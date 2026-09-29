@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wordle de Magic</title>
+<meta name="description" content="Adivinhe a criatura lendária de Magic: The Gathering do dia, com dicas vindas do Scryfall.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Instrument+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Wordle de Magic</h1>
+    <div class="seg" role="group" aria-label="Modo de jogo">
+      <button id="bEasy" aria-pressed="true">Fácil</button>
+      <button id="bHard" aria-pressed="false">Difícil</button>
+    </div>
+  </header>
+
+  <main class="game">
+    <section class="card" aria-label="Dicas da carta">
+      <div class="bar">
+        <span id="manaCost">? ? ? ?</span>
+        <span class="pips" id="pips" aria-label="Identidade de cor"></span>
+      </div>
+      <div class="art" id="artBox">arte revelada no fim</div>
+      <div class="bar">
+        <span id="typeLine">Legendary Creature — ?</span>
+        <span id="cmcLabel">MV ?</span>
+      </div>
+      <div class="oracle" id="oracleBox">
+        <p class="oracle-placeholder">As dicas de texto de regras aparecem conforme você tenta.</p>
+      </div>
+      <div class="hints">
+        <span id="hintsProgress">Dica 0 de 0 revelada</span>
+        <span id="hintsNext"></span>
+      </div>
+    </section>
+
+    <section>
+      <div class="meta" id="meta">Carregando…</div>
+      <div class="board" id="board"></div>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+
+      <div class="kb" id="kb"></div>
+
+      <div class="filter">
+        <code id="q"></code>
+        <a class="btn" id="scryfallLink" href="https://scryfall.com" target="_blank" rel="noopener">Ver opções no Scryfall</a>
+      </div>
+
+      <div id="resultPanel" class="result" hidden>
+        <img id="resultImg" alt="">
+        <div class="result-body">
+          <h2 id="resultName"></h2>
+          <p id="resultType" class="result-type"></p>
+          <p id="resultOracle" class="result-oracle"></p>
+          <div class="result-actions">
+            <a id="resultLink" target="_blank" rel="noopener">Ver no Scryfall</a>
+            <button id="shareBtn" class="btn">Copiar resultado</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <p class="foot">
+    Um jogo diário, sem afiliação com a Wizards of the Coast. Dados e imagens das cartas via
+    <a href="https://scryfall.com" target="_blank" rel="noopener">Scryfall</a>; Magic: The Gathering é propriedade da Wizards of the Coast.
+  </p>
+</div>
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>
