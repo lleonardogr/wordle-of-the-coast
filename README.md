@@ -1,9 +1,9 @@
-# Wordle de Magic
+# Wordle of the Coast
 
 Um Wordle diário de criaturas lendárias de *Magic: The Gathering*, com dados e
 imagens vindos da [API do Scryfall](https://scryfall.com/docs/api).
 
-Jogue em: https://lleonardogr.github.io/wordle-mtg/
+Jogue em: https://lleonardogr.github.io/wordle-of-the-coast/
 
 Para contexto de desenvolvimento (arquitetura, decisões, pipeline de dados),
 veja [CLAUDE.md](CLAUDE.md). Para o sistema visual e estado de design
@@ -20,6 +20,8 @@ visualmente, sem depender de automação de navegador ao vivo —
 - **Modo difícil**: adivinhe o nome completo da carta, incluindo pontuação
   (ex: `ATRAXA, PRAETORS' VOICE`). Espaços e pontuação já vêm revelados nas
   peças fixas do tabuleiro; só as letras são adivinhadas.
+- Ambos os modos têm 5 tentativas — a dificuldade vem do tamanho do
+  nome-alvo, não de ter menos chances.
 - A cada tentativa, uma nova dica é revelada: linhas do texto de regras
   (Oracle text) e, depois, o subtipo de criatura. A identidade de cor e o
   valor de mana já aparecem desde o início. A arte da carta só é revelada
@@ -36,16 +38,17 @@ visualmente, sem depender de automação de navegador ao vivo —
 vez de abrir o arquivo diretamente:
 
 ```bash
-python3 -m http.server 8000
-# ou: npx serve
+npm run serve
 ```
 
-Depois acesse `http://localhost:8000`.
+Depois acesse `http://localhost:8123`.
 
 ## Atualizando o pool de cartas
 
 O pool de criaturas lendárias fica em `data/cards.json`, gerado a partir da
-busca do Scryfall `t:legendary t:creature -is:funny game:paper lang:en`.
+busca do Scryfall `t:legendary t:creature -is:funny game:paper lang:en
+name:/,/` (o `name:/,/` garante que toda carta tem o formato
+"Nome, Epíteto", essencial para o modo fácil ser sempre curto de verdade).
 
 ```bash
 npm run fetch-cards
@@ -71,12 +74,21 @@ js/gameLogic.js       lógica pura do jogo (sem DOM) — feedback do Wordle,
                        seleção da carta do dia, montagem da query do Scryfall
 js/app.js              estado, renderização e eventos de UI
 scripts/fetch-cards.mjs  gera data/cards.json a partir da API do Scryfall
+scripts/e2e-smoke.mjs    teste ponta-a-ponta (Chromium headless) — ver docs/TESTING.md
 data/cards.json          pool de cartas elegíveis (gerado)
 .github/workflows/       atualização agendada dos dados
 ```
 
 ## Atribuição
 
-Este é um projeto de fã, sem afiliação com a Wizards of the Coast. Dados e
-imagens das cartas são fornecidos pela [Scryfall](https://scryfall.com).
-Magic: The Gathering é propriedade da Wizards of the Coast.
+Wordle of the Coast é Fan Content não-oficial, permitido pela
+[Wizards of the Coast Fan Content Policy](https://company.wizards.com/en/legal/fancontentpolicy).
+As informações literais e gráficas sobre Magic: The Gathering aqui presentes
+— incluindo imagens de cartas, símbolos de mana e texto de regras — são
+copyright da Wizards of the Coast, LLC, subsidiária da Hasbro, Inc. Wordle of
+the Coast não é produzido, endossado, apoiado ou afiliado à Wizards of the
+Coast.
+
+Dados e imagens das cartas são fornecidos pela [Scryfall](https://scryfall.com).
+Wordle of the Coast não é produzido nem endossado pela Scryfall. Projeto de
+fã, sem fins lucrativos.

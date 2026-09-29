@@ -26,7 +26,7 @@ npm run test:e2e                  # noutro terminal — roda os 3 cenários
 Ou direto contra produção (sem precisar do `npm run serve`):
 
 ```bash
-node scripts/e2e-smoke.mjs https://lleonardogr.github.io/wordle-mtg/
+node scripts/e2e-smoke.mjs https://lleonardogr.github.io/wordle-of-the-coast/
 ```
 
 O script:

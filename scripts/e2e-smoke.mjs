@@ -13,7 +13,7 @@
  * Uso:
  *   npx playwright install chromium   # uma vez, baixa o binário do Chromium
  *   npm run test:e2e                                    # contra localhost:8123
- *   node scripts/e2e-smoke.mjs https://lleonardogr.github.io/wordle-mtg/  # contra prod
+ *   node scripts/e2e-smoke.mjs https://lleonardogr.github.io/wordle-of-the-coast/  # contra prod
  *
  * Roda: npm run serve (num terminal separado) antes de testar localmente.
  */

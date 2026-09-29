@@ -73,7 +73,7 @@ const modeState = {
 };
 
 function storageKey(m) {
-  return `wordle-mtg:${puzzleNumber()}:${m}`;
+  return `wordle-of-the-coast:${puzzleNumber()}:${m}`;
 }
 
 function loadState(m) {
@@ -418,7 +418,7 @@ el.shareBtn?.addEventListener("click", async () => {
     .join("\n");
   const label = mode === "easy" ? "fácil" : "difícil";
   const result = state.status === "won" ? `${state.guesses.length}/${MAX_ATTEMPTS[mode]}` : "X";
-  const text = `Wordle de Magic #${puzzleNumber()} (${label}) ${result}\n${grid}`;
+  const text = `Wordle of the Coast #${puzzleNumber()} (${label}) ${result}\n${grid}`;
   try {
     await navigator.clipboard.writeText(text);
     showMessage("Resultado copiado!");

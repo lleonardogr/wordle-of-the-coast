@@ -17,7 +17,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = path.join(__dirname, "..", "data", "cards.json");
 
-const USER_AGENT = "wordle-mtg-data-fetcher/1.0 (+https://github.com/)";
+const USER_AGENT = "wordle-of-the-coast-data-fetcher/1.0 (+https://github.com/lleonardogr/wordle-of-the-coast)";
 // name:/,/ restringe ao formato "Nome, Epíteto" — garante que o modo fácil
 // (nome antes da vírgula) seja sempre curto de verdade. Sem esse filtro,
 // cartas sem vírgula (ex: "Go-Shintai of Life's Origin") caem no fallback

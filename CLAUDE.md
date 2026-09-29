@@ -1,11 +1,16 @@
-# Wordle de Magic — contexto do projeto
+# Wordle of the Coast — contexto do projeto
 
 Wordle diário de criaturas lendárias de *Magic: The Gathering*. Site
 estático (HTML/CSS/JS puro, sem build, sem framework) publicado no GitHub
-Pages, com dados vindos da API do Scryfall.
+Pages, com dados vindos da API do Scryfall. Nome é um trocadilho com
+"Wizards of the Coast" — por isso o rodapé do site carrega um aviso de Fan
+Content Policy explícito deixando clara a falta de afiliação.
 
-- **Produção:** https://lleonardogr.github.io/wordle-mtg/
-- **Repositório:** https://github.com/lleonardogr/wordle-mtg
+- **Produção:** https://lleonardogr.github.io/wordle-of-the-coast/
+- **Repositório:** https://github.com/lleonardogr/wordle-of-the-coast
+  (renomeado de `wordle-mtg` — se algum link antigo apontar para
+  `wordle-mtg`, o GitHub redireciona automaticamente por um tempo, mas não
+  para sempre)
 - Leia também **[docs/DESIGN.md](docs/DESIGN.md)** (sistema visual, protótipo
   original, decisões de layout) e **[docs/TESTING.md](docs/TESTING.md)**
   (como testar, inclusive visualmente, sem automação de navegador).
@@ -96,7 +101,7 @@ atenção, já resolvidos no script mas fáceis de reintroduzir se mexer nele:
   sem vírgula no modo fácil podem ser tão longos quanto no modo difícil, e
   ficavam com peças grandes demais, quebrando em várias linhas.
 - Progresso por modo fica em `localStorage`, chaveado por
-  `wordle-mtg:<número-do-puzzle>:<modo>`.
+  `wordle-of-the-coast:<número-do-puzzle>:<modo>`.
 - Símbolos de mana do Oracle text (`{W}`, `{T}`, etc.) são convertidos em
   pastilhas (`renderManaText` em `app.js`), nunca mostrados como texto cru.
 

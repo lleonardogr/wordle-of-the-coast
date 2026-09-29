@@ -1,8 +1,8 @@
 {
-  "name": "wordle-mtg",
+  "name": "wordle-of-the-coast",
   "version": "1.0.0",
   "private": true,
-  "description": "Wordle de Magic: The Gathering — adivinhe a carta lendária do dia usando dados da API do Scryfall.",
+  "description": "Wordle of the Coast — adivinhe a criatura lendária de Magic: The Gathering do dia usando dados da API do Scryfall.",
   "type": "module",
   "scripts": {
     "fetch-cards": "node scripts/fetch-cards.mjs",
