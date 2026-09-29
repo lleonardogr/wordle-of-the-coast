@@ -70,7 +70,9 @@ reintroduzir se mexer nele:
   peça abaixo).
 - **Modo difícil**: nome completo, pontuação/espaços já revelados como
   peças fixas.
-- Tentativas: fácil = 6, difícil = 8 (`MAX_ATTEMPTS` em `gameLogic.js`).
+- Tentativas: 5 nos dois modos (`MAX_ATTEMPTS` em `gameLogic.js`) — a
+  dificuldade vem só do tamanho do nome-alvo (curto vs. completo), não de
+  ter menos chances.
 - Dicas reveladas progressivamente por tentativa: linhas do Oracle text,
   depois o subtipo de criatura. Identidade de cor e valor de mana (MV) já
   aparecem desde o início; o custo de mana exato fica com "?" até o fim.

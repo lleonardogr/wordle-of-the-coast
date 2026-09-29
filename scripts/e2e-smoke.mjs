@@ -28,7 +28,7 @@ const ROOT = path.join(__dirname, "..");
 const BASE = process.argv[2] || "http://localhost:8123/";
 const OUT = path.join(ROOT, "e2e-screenshots");
 
-const { dailyIndex, targetNameForMode, stripDiacritics } = await import(
+const { dailyIndex, targetNameForMode, stripDiacritics, MAX_ATTEMPTS } = await import(
   path.join(ROOT, "js/gameLogic.js")
 );
 
@@ -138,7 +138,7 @@ async function main() {
     const glenHard = await page.evaluate(
       () => document.querySelectorAll("#board .row")[0].querySelectorAll(".t:not(.fix)").length
     );
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < MAX_ATTEMPTS.hard; i++) {
       await page.keyboard.type("Q".repeat(glenHard));
       await page.keyboard.press("Enter");
       await page.waitForTimeout(120);

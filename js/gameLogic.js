@@ -1,7 +1,7 @@
 // Funções puras de lógica de jogo — sem acesso ao DOM.
 // Facilita testar e raciocinar sobre as regras separadamente da renderização.
 
-export const MAX_ATTEMPTS = { easy: 6, hard: 8 };
+export const MAX_ATTEMPTS = { easy: 5, hard: 5 };
 
 // Época fixa usada para calcular o índice do "puzzle do dia" de forma
 // determinística e igual para todos os jogadores (mesmo princípio do Wordle).
