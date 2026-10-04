@@ -1,0 +1,3 @@
+#!/bin/sh
+# Ativado por `npm install` (script "prepare"). Ver CONTRIBUTING.md.
+exec node "$(git rev-parse --show-toplevel)/scripts/lint-commit-msg.mjs" "$1"

@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  commits:
+    name: Conventional Commits
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validar mensagens de commit
+        env:
+          BEFORE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          AFTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          # Push de branch nova chega com "before" zerado: valida só o último commit.
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            BEFORE="$AFTER~1"
+          fi
+          node scripts/lint-commit-msg.mjs --range "$BEFORE..$AFTER"
+
+  e2e:
+    name: Smoke test (Chromium)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      - run: npx playwright install --with-deps chromium
+
+      - name: Servir o site e rodar o smoke test
+        run: |
+          python3 -m http.server 8123 &
+          timeout 30 sh -c 'until curl -sf http://localhost:8123 >/dev/null; do sleep 1; done'
+          npm run test:e2e
+
+      - name: Guardar screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-screenshots
+          path: e2e-screenshots/
+          if-no-files-found: ignore
