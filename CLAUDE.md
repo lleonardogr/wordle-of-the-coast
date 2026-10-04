@@ -38,6 +38,8 @@ scripts/fetch-cards.mjs      gera data/cards.json a partir da API do Scryfall
 scripts/e2e-smoke.mjs        teste de fumaça com Chromium headless — ver TESTING.md
 data/cards.json               pool de cartas elegíveis (gerado, ~3.5MB, 3520 cartas)
 .github/workflows/update-cards.yml   re-busca o Scryfall toda segunda-feira
+.github/workflows/ci.yml             lint de commits + smoke test em push/PR
+.github/workflows/release-please.yml versionamento, CHANGELOG e releases
 ```
 
 `js/gameLogic.js` não toca no DOM de propósito — qualquer mudança de regra
@@ -104,6 +106,24 @@ atenção, já resolvidos no script mas fáceis de reintroduzir se mexer nele:
   `wordle-of-the-coast:<número-do-puzzle>:<modo>`.
 - Símbolos de mana do Oracle text (`{W}`, `{T}`, etc.) são convertidos em
   pastilhas (`renderManaText` em `app.js`), nunca mostrados como texto cru.
+
+## Commits e releases
+
+- Mensagens em **Conventional Commits**, descrição em português no
+  imperativo (`fix(ui): evitar quebra de linha...`). Validadas por
+  `scripts/lint-commit-msg.mjs` — hook `commit-msg` em `.githooks/` (ativado
+  pelo `npm install` via script `prepare`) e job `commits` no
+  `.github/workflows/ci.yml`. Tipos e escopos em `CONTRIBUTING.md`.
+- O tipo decide a versão: `feat` → minor, `fix`/`perf` → patch, `!` →
+  major. Mudança só interna ou de dados é `chore`/`refactor`/`docs` e não gera
+  release — por isso o workflow semanal commita como `chore(data): ...`.
+- **Não editar `CHANGELOG.md`, a versão do `package.json` nem criar tags à
+  mão**: o release-please (`.github/workflows/release-please.yml`) mantém um
+  PR de release; o merge dele cria tag `vX.Y.Z` + GitHub Release. A versão no
+  rodapé do `index.html` também é atualizada por ele (marcador
+  `x-release-please-version` na mesma linha — não separar).
+- Os 6 commits anteriores à 1.0.0 não seguem o padrão; o histórico não foi
+  reescrito (já estava publicado).
 
 ## Deploy
 

@@ -1,5 +1,10 @@
 # Wordle of the Coast
 
+[![CI](https://github.com/lleonardogr/wordle-of-the-coast/actions/workflows/ci.yml/badge.svg)](https://github.com/lleonardogr/wordle-of-the-coast/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/lleonardogr/wordle-of-the-coast)](https://github.com/lleonardogr/wordle-of-the-coast/releases)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-fe5196?logo=conventionalcommits&logoColor=white)](https://www.conventionalcommits.org/pt-br/v1.0.0/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Um Wordle diário de criaturas lendárias de *Magic: The Gathering*, com dados e
 imagens vindos da [API do Scryfall](https://scryfall.com/docs/api).
 
@@ -65,6 +70,13 @@ O site é publicado direto da branch `main` (raiz do repositório) via GitHub
 Pages — sem etapa de build. Qualquer push em `main` (incluindo os commits
 automáticos do workflow acima) já atualiza o site publicado.
 
+## Contribuindo e releases
+
+Commits seguem [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/)
+(validados por hook local e no CI). Versões e o [CHANGELOG](CHANGELOG.md) são
+gerados automaticamente pelo release-please a cada merge em `main`. Detalhes
+em [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Estrutura
 
 ```
@@ -76,7 +88,7 @@ js/app.js              estado, renderização e eventos de UI
 scripts/fetch-cards.mjs  gera data/cards.json a partir da API do Scryfall
 scripts/e2e-smoke.mjs    teste ponta-a-ponta (Chromium headless) — ver docs/TESTING.md
 data/cards.json          pool de cartas elegíveis (gerado)
-.github/workflows/       atualização agendada dos dados
+.github/workflows/       CI, releases e atualização agendada dos dados
 ```
 
 ## Atribuição
@@ -92,3 +104,6 @@ Coast.
 Dados e imagens das cartas são fornecidos pela [Scryfall](https://scryfall.com).
 Wordle of the Coast não é produzido nem endossado pela Scryfall. Projeto de
 fã, sem fins lucrativos.
+
+O código-fonte está sob a [licença MIT](LICENSE), que não se estende ao
+conteúdo de Magic: The Gathering nem aos dados do Scryfall.
