@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Dados de carta errados (nome, texto, arte)
+    url: https://scryfall.com/contact
+    about: Os dados vêm do Scryfall e são atualizados toda segunda-feira. Erros na fonte devem ser reportados lá.
