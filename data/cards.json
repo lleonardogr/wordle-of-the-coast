@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T19:22:42.440Z",
+  "generated_at": "2026-10-05T13:55:47.036Z",
   "query": "t:legendary t:creature -is:funny game:paper lang:en name:/,/",
   "count": 2567,
   "cards": [
@@ -3301,8 +3301,8 @@
       ],
       "type_line": "Legendary Creature — Elf Shaman",
       "oracle_text": "Creatures your opponents control with power less than Baeloth Barrityl's power are goaded. (They attack each combat if able and attack a player other than you if able.)\nWhenever a goaded attacking or blocking creature dies, you create a Treasure token.\nChoose a Background (You can have a Background as a second commander.)",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/e/c/ec983aac-9eda-4086-ad7e-34da9b2987cc.jpg?1783922513",
-      "image": "https://cards.scryfall.io/normal/front/e/c/ec983aac-9eda-4086-ad7e-34da9b2987cc.jpg?1783922513",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/e/c/ec983aac-9eda-4086-ad7e-34da9b2987cc.jpg?1790748156",
+      "image": "https://cards.scryfall.io/normal/front/e/c/ec983aac-9eda-4086-ad7e-34da9b2987cc.jpg?1790748156",
       "scryfall_uri": "https://scryfall.com/card/clb/655/baeloth-barrityl-entertainer?utm_source=api",
       "set_name": "Commander Legends: Battle for Baldur's Gate",
       "released_at": "2022-06-10"
@@ -7690,8 +7690,8 @@
       ],
       "type_line": "Legendary Creature — Human Noble Villain",
       "oracle_text": "Whenever you discard one or more land cards, each opponent loses 2 life.\nAt the beginning of combat on your turn, target Villain you control gains menace until end of turn. It connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/b/9/b9997d93-4c6f-49dd-8ff0-76901fe78859.jpg?1789532701",
-      "image": "https://cards.scryfall.io/normal/front/b/9/b9997d93-4c6f-49dd-8ff0-76901fe78859.jpg?1789532701",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/b/9/b9997d93-4c6f-49dd-8ff0-76901fe78859.jpg?1791146016",
+      "image": "https://cards.scryfall.io/normal/front/b/9/b9997d93-4c6f-49dd-8ff0-76901fe78859.jpg?1791146016",
       "scryfall_uri": "https://scryfall.com/card/lmar/7/doctor-doom-king-of-latveria?utm_source=api",
       "set_name": "Marvel Legends Series Inserts",
       "released_at": "2026-10-15"
@@ -9060,8 +9060,8 @@
       "color_identity": [],
       "type_line": "Legendary Creature — Eldrazi",
       "oracle_text": "When you cast this spell, untap all lands you control.\nFlying, trample\nWard—Sacrifice three permanents.\n{3}, Exile this card from your hand: Target land gains \"{T}: Add {C}{C}\" until this card is cast from exile. You may cast this card for as long as it remains exiled.",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/c/3/c3ff8dd3-88a8-49dc-a59b-e2748680623c.jpg?1789060137",
-      "image": "https://cards.scryfall.io/normal/front/c/3/c3ff8dd3-88a8-49dc-a59b-e2748680623c.jpg?1789060137",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/c/3/c3ff8dd3-88a8-49dc-a59b-e2748680623c.jpg?1790829846",
+      "image": "https://cards.scryfall.io/normal/front/c/3/c3ff8dd3-88a8-49dc-a59b-e2748680623c.jpg?1790829846",
       "scryfall_uri": "https://scryfall.com/card/fra/1/emrakul-the-exigent-doom?utm_source=api",
       "set_name": "Reality Fracture",
       "released_at": "2026-10-02"
@@ -10865,8 +10865,8 @@
       ],
       "type_line": "Legendary Creature — Satyr",
       "oracle_text": "Haste\nEach other creature you control with a +1/+1 counter on it has haste.\n{1}{R}, {T}: Put a +1/+1 counter on target creature that entered this turn.",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/f/2/f27d50f0-d76e-4ce1-a8d9-d997af6a5b41.jpg?1789385716",
-      "image": "https://cards.scryfall.io/normal/front/f/2/f27d50f0-d76e-4ce1-a8d9-d997af6a5b41.jpg?1789385716",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/f/2/f27d50f0-d76e-4ce1-a8d9-d997af6a5b41.jpg?1791192275",
+      "image": "https://cards.scryfall.io/normal/front/f/2/f27d50f0-d76e-4ce1-a8d9-d997af6a5b41.jpg?1791192275",
       "scryfall_uri": "https://scryfall.com/card/fra/245/gallia-the-merrymaker?utm_source=api",
       "set_name": "Reality Fracture",
       "released_at": "2026-10-02"
@@ -39601,11 +39601,11 @@
       ],
       "type_line": "Legendary Creature — Zombie Giant",
       "oracle_text": "Menace\nWhenever another creature dies during your turn, put a +1/+1 counter on Vogar.\nWhen Vogar dies, draw a card for each +1/+1 counter on it.",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/4/2/42679318-e5c4-4aa4-8097-97552defc8bf.jpg?1783920304",
-      "image": "https://cards.scryfall.io/normal/front/4/2/42679318-e5c4-4aa4-8097-97552defc8bf.jpg?1783920304",
-      "scryfall_uri": "https://scryfall.com/card/gn3/3/vogar-necropolis-tyrant?utm_source=api",
-      "set_name": "Game Night: Free-for-All",
-      "released_at": "2022-10-14"
+      "art_crop": "https://cards.scryfall.io/art_crop/front/6/f/6f8fca40-1f5c-4f93-8c02-b697fa592c11.jpg?1790772288",
+      "image": "https://cards.scryfall.io/normal/front/6/f/6f8fca40-1f5c-4f93-8c02-b697fa592c11.jpg?1790772288",
+      "scryfall_uri": "https://scryfall.com/card/sld/2591/vogar-necropolis-tyrant?utm_source=api",
+      "set_name": "Secret Lair Drop",
+      "released_at": "2026-10-12"
     },
     {
       "id": "4380df08-7be4-48ca-9783-d644fd2ea27d",
