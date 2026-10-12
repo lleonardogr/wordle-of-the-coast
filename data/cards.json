@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-05T13:55:47.036Z",
+  "generated_at": "2026-10-12T14:44:11.558Z",
   "query": "t:legendary t:creature -is:funny game:paper lang:en name:/,/",
-  "count": 2567,
+  "count": 2570,
   "cards": [
     {
       "id": "854278bc-2bcf-45dd-abd5-6aca7a1e5fc9",
@@ -5719,8 +5719,8 @@
       ],
       "type_line": "Legendary Creature — Human Soldier Hero",
       "oracle_text": "Whenever another Hero you control enters, it gains vigilance and haste until end of turn. Put a +1/+1 counter on that Hero and a +1/+1 counter on Captain America.",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/f/f/ff25a4f5-c1de-464b-8153-7678bca847a8.jpg?1789532484",
-      "image": "https://cards.scryfall.io/normal/front/f/f/ff25a4f5-c1de-464b-8153-7678bca847a8.jpg?1789532484",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/f/f/ff25a4f5-c1de-464b-8153-7678bca847a8.jpg?1791202003",
+      "image": "https://cards.scryfall.io/normal/front/f/f/ff25a4f5-c1de-464b-8153-7678bca847a8.jpg?1791202003",
       "scryfall_uri": "https://scryfall.com/card/lmar/6/captain-america-team-leader?utm_source=api",
       "set_name": "Marvel Legends Series Inserts",
       "released_at": "2026-10-15"
@@ -7690,11 +7690,11 @@
       ],
       "type_line": "Legendary Creature — Human Noble Villain",
       "oracle_text": "Whenever you discard one or more land cards, each opponent loses 2 life.\nAt the beginning of combat on your turn, target Villain you control gains menace until end of turn. It connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on that creature.)",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/b/9/b9997d93-4c6f-49dd-8ff0-76901fe78859.jpg?1791146016",
-      "image": "https://cards.scryfall.io/normal/front/b/9/b9997d93-4c6f-49dd-8ff0-76901fe78859.jpg?1791146016",
-      "scryfall_uri": "https://scryfall.com/card/lmar/7/doctor-doom-king-of-latveria?utm_source=api",
-      "set_name": "Marvel Legends Series Inserts",
-      "released_at": "2026-10-15"
+      "art_crop": "https://cards.scryfall.io/art_crop/front/9/1/91a7f124-79af-45c2-a43d-7004bbda3045.jpg?1791579831",
+      "image": "https://cards.scryfall.io/normal/front/9/1/91a7f124-79af-45c2-a43d-7004bbda3045.jpg?1791579831",
+      "scryfall_uri": "https://scryfall.com/card/pmei/2026-26/doctor-doom-king-of-latveria?utm_source=api",
+      "set_name": "Media and Collaboration Promos",
+      "released_at": "2026-12-18"
     },
     {
       "id": "cb3dd50b-ce78-4727-b174-06f99fc5ec74",
@@ -11035,6 +11035,23 @@
       "released_at": "2023-06-23"
     },
     {
+      "id": "759e7e44-a082-419f-abd3-aabc45c47334",
+      "name": "Gargantos, the Endbringer",
+      "mana_cost": "{2}{B}{G}",
+      "cmc": 4,
+      "color_identity": [
+        "B",
+        "G"
+      ],
+      "type_line": "Legendary Creature — Elder God Horror",
+      "oracle_text": "Deathtouch\nGargantos enters with three +1/+1 counters on him.\nAt the beginning of your upkeep, double the number of +1/+1 counters on Gargantos.\nWhenever Gargantos deals combat damage to an opponent, he deals that much damage to each other opponent.",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/6/0/60b48730-3590-4c8c-b0e8-6007bb36d6b6.jpg?1791578335",
+      "image": "https://cards.scryfall.io/normal/front/6/0/60b48730-3590-4c8c-b0e8-6007bb36d6b6.jpg?1791578335",
+      "scryfall_uri": "https://scryfall.com/card/mdc/399/gargantos-the-endbringer?utm_source=api",
+      "set_name": "Darkhold Destiny Commander",
+      "released_at": "2027-04-09"
+    },
+    {
       "id": "378fcd0f-1096-4769-9149-55b4a889ff56",
       "name": "Gargos, Vicious Watcher",
       "mana_cost": "{3}{G}{G}{G}",
@@ -13783,6 +13800,22 @@
       "released_at": "2022-02-18"
     },
     {
+      "id": "203f6f4a-1cf5-4ddc-b60f-676832eeff6b",
+      "name": "Hela, Mistress of Darkness",
+      "mana_cost": "{4}{B}{B}",
+      "cmc": 6,
+      "color_identity": [
+        "B"
+      ],
+      "type_line": "Legendary Creature — God Sorcerer Villain",
+      "oracle_text": "Whenever a player loses life during your turn, you may create that many tapped 2/2 black Zombie creature tokens. Do this only once each turn.",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/7/7/7750d4bb-0463-43fd-bdf3-a14271cace20.jpg?1791578367",
+      "image": "https://cards.scryfall.io/normal/front/7/7/7750d4bb-0463-43fd-bdf3-a14271cace20.jpg?1791578367",
+      "scryfall_uri": "https://scryfall.com/card/mdd/106/hela-mistress-of-darkness-dark-tutor?utm_source=api",
+      "set_name": "Marvel: Darkhold Destiny",
+      "released_at": "2027-04-09"
+    },
+    {
       "id": "0a0d25a8-4f28-453b-9270-4d449fe0ca65",
       "name": "Helga, Skittish Seer",
       "mana_cost": "{G}{W}{U}",
@@ -15803,8 +15836,8 @@
       ],
       "type_line": "Legendary Creature — Shark",
       "oracle_text": "Trample, haste\nWhenever Jaws deals combat damage to a player, create that many Blood tokens. (They're artifacts with \"{1}, {T}, Discard a card, Sacrifice this token: Draw a card.\")\nWhenever a noncreature artifact is sacrificed or destroyed, Jaws deals 1 damage to each opponent.",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/c/6/c6d16a9e-98c0-46e0-987c-f0de0915a204.jpg?1785419997",
-      "image": "https://cards.scryfall.io/normal/front/c/6/c6d16a9e-98c0-46e0-987c-f0de0915a204.jpg?1785419997",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/c/6/c6d16a9e-98c0-46e0-987c-f0de0915a204.jpg?1791470750",
+      "image": "https://cards.scryfall.io/normal/front/c/6/c6d16a9e-98c0-46e0-987c-f0de0915a204.jpg?1791470750",
       "scryfall_uri": "https://scryfall.com/card/sld/2175/jaws-relentless-predator?utm_source=api",
       "set_name": "Secret Lair Drop",
       "released_at": "2025-10-13"
@@ -22092,6 +22125,23 @@
       "scryfall_uri": "https://scryfall.com/card/otj/133/magda-the-hoardmaster?utm_source=api",
       "set_name": "Outlaws of Thunder Junction",
       "released_at": "2024-04-19"
+    },
+    {
+      "id": "72d85d61-6bc3-4028-97c0-d5c34204a1df",
+      "name": "Magik, Illyana Rasputin",
+      "mana_cost": "{1}{B}{R}",
+      "cmc": 3,
+      "color_identity": [
+        "B",
+        "R"
+      ],
+      "type_line": "Legendary Creature — Mutant Sorcerer Hero",
+      "oracle_text": "At the beginning of your upkeep, exile the top card of your library. You may play that card this turn.\nAt the beginning of your end step, if you've sacrificed two or more permanents this turn, you may transform Magik.",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/6/0/60e252e3-88ea-49f2-a14f-ae9d0712bafe.jpg?1791578412",
+      "image": "https://cards.scryfall.io/normal/front/6/0/60e252e3-88ea-49f2-a14f-ae9d0712bafe.jpg?1791578412",
+      "scryfall_uri": "https://scryfall.com/card/mdd/242/magik-illyana-rasputin-darkchild-demon-uncaged?utm_source=api",
+      "set_name": "Marvel: Darkhold Destiny",
+      "released_at": "2027-04-09"
     },
     {
       "id": "129476ae-9dab-4e04-8e8e-f249afd56ff9",
@@ -34765,8 +34815,8 @@
       ],
       "type_line": "Legendary Creature — Human Noble Hero",
       "oracle_text": "Whenever T'Challa enters or attacks, create a tapped Vibranium token. (It's an artifact with indestructible and \"{T}: Add {C}. This mana can't be spent to cast a nonartifact spell.\")\nWhenever you cast an artifact spell with mana value 4 or greater, put two +1/+1 counters on T'Challa.",
-      "art_crop": "https://cards.scryfall.io/art_crop/front/d/7/d72c4452-b4f2-45a8-9127-42368a23ac6a.jpg?1789532400",
-      "image": "https://cards.scryfall.io/normal/front/d/7/d72c4452-b4f2-45a8-9127-42368a23ac6a.jpg?1789532400",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/d/7/d72c4452-b4f2-45a8-9127-42368a23ac6a.jpg?1791202017",
+      "image": "https://cards.scryfall.io/normal/front/d/7/d72c4452-b4f2-45a8-9127-42368a23ac6a.jpg?1791202017",
       "scryfall_uri": "https://scryfall.com/card/lmar/8/tchalla-the-black-panther?utm_source=api",
       "set_name": "Marvel Legends Series Inserts",
       "released_at": "2026-10-08"
